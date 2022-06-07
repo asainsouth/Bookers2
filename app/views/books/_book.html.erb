@@ -12,7 +12,28 @@
   <p><%= f.text_area :body, class:"form-control", rows:"2" %></p>
   </div>
 
- <%= f.submit 'Create Book', class: "btn btn-success" %>
- <% end %>
+ <div class="form-group row" id="star">
+    <%#= f.label :star,'Rate ', class:'col-md-3 col-form-label' %>
+    <%#= f.hidden_field :star, id: :review_star %>
+  </div>
+
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'book[star]',
+    half: true,
+  });
+  </script>
+
+  <%= f.submit 'Create Book', class: "btn btn-success" %>
+  <% end %>
+
+
+
+
+
 
 

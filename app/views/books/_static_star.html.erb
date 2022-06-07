@@ -1,0 +1,15 @@
+ <td>
+            <div id="star<%= book.id %>"></td>
+             <script>
+              $('#star<%= book.id %>').empty();
+              $('#star<%= book.id %>').raty({
+                 size      : 36,
+                 starOff   : '<%= asset_path('star-off.png') %>',
+                 starOn    : '<%= asset_path('star-on.png') %>',
+                 starHalf    :'<%= asset_path('star-half.png') %>',
+                 half      : true,
+                 readOnly: true,
+                 score: <%= book.star %>,
+               });
+             </script>
+          </td>

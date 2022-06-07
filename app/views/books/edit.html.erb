@@ -27,7 +27,21 @@
 
   <%= f.submit "Update Book" %>
 <% end %>
+ <div class="form-group row" id="star">
+    <%#= f.label :star,'Rate ', class:'col-md-3 col-form-label' %>
+    <%#= f.hidden_field :star, id: :review_star %>
+  </div>
 
+  <script>
+  $('#star').raty({
+    size     : 36,
+    starOff:  '<%= asset_path('star-off.png') %>',
+    starOn : '<%= asset_path('star-on.png') %>',
+    starHalf: '<%= asset_path('star-half.png') %>',
+    scoreName: 'book[star]',
+    half: true,
+  });
+  </script>
  <td><%= link_to "Show", book_path %></td>
  <td><%= link_to "Back", books_path %></td>
 </div>
